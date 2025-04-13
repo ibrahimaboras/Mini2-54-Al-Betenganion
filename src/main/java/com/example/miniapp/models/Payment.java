@@ -11,6 +11,7 @@ public class Payment {
     private String paymentMethod;
     private boolean paymentStatus;
 
+
     @OneToOne
     @JoinColumn(name = "trip_id", referencedColumnName = "id")
     private Trip trip;
@@ -21,13 +22,15 @@ public class Payment {
     public double getAmount() { return amount; }
     public void setAmount(double amount) { this.amount = amount; }
 
-public String getPaymentMethod() { return paymentMethod; }
-public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
+    public String getPaymentMethod() { return paymentMethod; }
+    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
 
-public boolean isPaymentStatus() { return paymentStatus; }
-public void setPaymentStatus(boolean paymentStatus) { this.paymentStatus = paymentStatus; }
-//hhjjj
-public Trip getTrip() { return trip; }
-public void setTrip(Trip trip) { this.trip = trip; }
+
+    public boolean isPaymentStatus() { return paymentStatus; }
+    public void setPaymentStatus(boolean paymentStatus) { this.paymentStatus = paymentStatus; }
+
+    public Trip getTrip() { return trip; }
+    public void setTrip(Trip trip) { this.trip = trip; }
+
 }
 

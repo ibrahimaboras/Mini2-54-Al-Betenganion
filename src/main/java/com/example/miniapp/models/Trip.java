@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,31 +20,42 @@ public class Trip {
     private long id;
     private LocalDateTime tripDate;
     private String origin;
-    private String Destination;
+    private String destination;
     private double tripCost;
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "captain_id",referencedColumnName = "id")
-    private Captain user;
+    private Captain captain;
+
+    @OneToOne(mappedBy = "trip")
+    private Payment payment;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private Customer customer;
 
 
 
     public Trip() {
     }
 
-    public Trip(LocalDateTime tripDate, String origin, String destination, double tripCost) {
+    public Trip(LocalDateTime tripDate, String origin, String destination, double tripCost, Captain captain, Customer customer) {
         this.tripDate = tripDate;
         this.origin = origin;
-        Destination = destination;
+        this.destination = destination;
         this.tripCost = tripCost;
+        this.captain = captain;
+        this.customer = customer;
     }
 
-    public Trip(long id, LocalDateTime tripDate, String origin, String destination, double tripCost) {
+    public Trip(long id, LocalDateTime tripDate, String origin, String destination, double tripCost, Captain captain, Customer customer) {
         this.id = id;
         this.tripDate = tripDate;
         this.origin = origin;
-        Destination = destination;
+        this.destination = destination;
         this.tripCost = tripCost;
+        this.captain = captain;
+        this.customer = customer;
     }
 
     public long getId() {
@@ -71,11 +83,11 @@ public class Trip {
     }
 
     public String getDestination() {
-        return Destination;
+        return this.destination;
     }
 
     public void setDestination(String destination) {
-        Destination = destination;
+        this.destination = destination;
     }
 
     public double getTripCost() {
@@ -86,13 +98,28 @@ public class Trip {
         this.tripCost = tripCost;
     }
 
-    public Captain getUser() {
-        return user;
+    public Captain getCaptain() {
+        return captain;
     }
 
-    public void setUser(Captain user) {
-        this.user = user;
+    public void setCaptain(Captain captain) {
+        this.captain = captain;
     }
 
-    
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
 }
