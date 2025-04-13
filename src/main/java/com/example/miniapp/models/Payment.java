@@ -26,7 +26,7 @@ public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymen
 
 public boolean isPaymentStatus() { return paymentStatus; }
 public void setPaymentStatus(boolean paymentStatus) { this.paymentStatus = paymentStatus; }
-//jj
+//hhjjj
 //public Trip getTrip() { return trip; }
 //public void setTrip(Trip trip) { this.trip = trip; }
 }
