@@ -26,6 +26,8 @@ public class Trip {
     @JoinColumn(name = "captain_id",referencedColumnName = "id")
     private Captain user;
 
+
+
     public Trip() {
     }
 
