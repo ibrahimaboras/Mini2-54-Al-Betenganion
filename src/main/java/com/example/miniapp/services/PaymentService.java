@@ -6,6 +6,9 @@ import com.example.miniapp.repositories.PaymentRepository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class PaymentService {
     private PaymentRepository paymentRepository;
     public PaymentService(PaymentRepository paymentRepository) {
