@@ -27,7 +27,7 @@ public class CaptainService {
     }
 
     //  Get Captain By ID
-    public Captain getCaptainById(long id){
+    public Captain getCaptainById(Long id){
         return captainRepository.findById(id).orElse(null);
     }
 
