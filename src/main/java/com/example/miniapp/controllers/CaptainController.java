@@ -15,7 +15,7 @@ import com.example.miniapp.models.Captain;
 import com.example.miniapp.services.CaptainService;
 
 @RestController
-@RequestMapping("/captains")
+@RequestMapping("/captain")
 public class CaptainController {
 
     private final CaptainService captainService;

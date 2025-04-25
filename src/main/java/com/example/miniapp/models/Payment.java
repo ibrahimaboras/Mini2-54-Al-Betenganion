@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "payments")
 public class Payment {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private double amount;
     private String paymentMethod;

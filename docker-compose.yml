@@ -11,11 +11,14 @@ services:
       - db
       - mongo
     environment:
-      - spring.datasource.url=jdbc:postgresql://host.docker.internal:5432/al-betenganion
-      - spring.datasource.username=postgres
-      - spring.datasource.password=1234
-      - spring.mongodb.uri=mongodb://root:example@mongo:27017/al-betenganion?authSource=admin
-      - spring.data.mongodb.database=al-betenganion
+    # MongoDB
+      SPRING_DATA_MONGODB_URI:      mongodb://root:example@mongo:27017/al-betenganion?authSource=admin
+      SPRING_DATA_MONGODB_DATABASE: al-betenganion
+      # PostgreSQL
+      SPRING_DATASOURCE_URL:    jdbc:postgresql://db:5432/al-betenganion
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+
     restart: always
 
   # PostgreSQL
