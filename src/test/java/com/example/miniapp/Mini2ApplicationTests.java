@@ -1,4 +1,4 @@
-package com.example.Al.Betenganion;
+package com.example.miniapp;
 // G:\Semester 10\ACL\Mini-Project 2\Al-Betenganion\src\test\java\com\example\Al\Betenganion
 import org.springframework.beans.factory.annotation.Value;
 import com.example.miniapp.models.*;

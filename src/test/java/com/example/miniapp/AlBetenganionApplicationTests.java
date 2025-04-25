@@ -1,4 +1,4 @@
-package com.example.Al.Betenganion;
+package com.example.miniapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

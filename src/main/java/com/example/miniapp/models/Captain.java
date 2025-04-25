@@ -19,7 +19,7 @@ public class Captain {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String license_number;
+    private String licenseNumber;
     private double avgRatingScore;
 
     @OneToMany(mappedBy = "captain", fetch = FetchType.LAZY)
@@ -29,16 +29,16 @@ public class Captain {
     public Captain() {
     }
 
-    public Captain(String name, String license_number, double avgRatingScore) {
+    public Captain(String name, String licenseNumber, double avgRatingScore) {
         this.name = name;
-        this.license_number = license_number;
+        this.licenseNumber = licenseNumber;
         this.avgRatingScore = avgRatingScore;
     }
 
-    public Captain(long id, String name, String license_number, double avgRatingScore) {
+    public Captain(long id, String name, String licenseNumber, double avgRatingScore) {
         this.id = id;
         this.name = name;
-        this.license_number = license_number;
+        this.licenseNumber = licenseNumber;
         this.avgRatingScore = avgRatingScore;
     }
 
@@ -59,11 +59,11 @@ public class Captain {
     }
 
     public String getLicense_number() {
-        return license_number;
+        return licenseNumber;
     }
 
     public void setLicense_number(String license_number) {
-        this.license_number = license_number;
+        this.licenseNumber = license_number;
     }
 
     public double getAvgRatingScore() {
